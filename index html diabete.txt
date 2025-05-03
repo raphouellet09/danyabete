@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recettes Diabète Type 2</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: white; color: #003366; margin: 0; padding: 0; }
+    header { background-color: #0066cc; color: white; padding: 20px; text-align: center; }
+    nav { background-color: #e6f2ff; padding: 10px; display: flex; justify-content: space-around; }
+    nav a { text-decoration: none; color: #003366; font-weight: bold; }
+    section { padding: 20px; }
+    .day { border: 1px solid #0066cc; margin: 10px 0; padding: 10px; border-radius: 8px; }
+    footer { background-color: #0066cc; color: white; text-align: center; padding: 10px; }
+    textarea { width: 100%; height: 100px; margin-top: 10px; }
+    ul { list-style-type: square; padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Recettes Santé - Diabète Type 2</h1>
+  </header>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#repas">Planificateur de repas</a>
+    <a href="#glucerna-plans">Plans Glucerna</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#apropos">À propos</a>
+  </nav>
+
+  <section id="accueil">
+    <h2>Bienvenue sur notre site</h2>
+    <p>Ce site aide les personnes atteintes de diabète de type 2 à accéder à des recettes simples, abordables et adaptées à leur condition.</p>
+  </section>
+
+  <section id="repas">
+    <h2>Planificateur de repas par IA</h2>
+    <div id="meal-plan"></div>
+  </section>
+
+  <section id="glucerna-plans">
+    <h2>Plans de repas Glucerna</h2>
+    <ul>
+      <li><a href="https://www.glucerna.ca/fr/plans-repas/plan-repas-proteine" target="_blank">Plan de repas protéiné</a></li>
+      <li><a href="https://www.glucerna.ca/fr/plans-repas/plan-repas-vegetarien" target="_blank">Plan de repas végétarien</a></li>
+      <li><a href="https://www.glucerna.ca/fr/plans-repas/plan-repas-bon-coeur" target="_blank">Plan de repas bon pour le cœur</a></li>
+      <li><a href="https://www.glucerna.ca/fr/plans-repas" target="_blank">Tous les plans de repas Glucerna</a></li>
+    </ul>
+  </section>
+
+  <section id="agenda">
+    <h2>Votre agenda de préférences</h2>
+    <p>Notez ici ce que vous avez aimé ou non dans les repas proposés :</p>
+    <textarea placeholder="Exemple : J'ai adoré le déjeuner du lundi, mais moins aimé le souper du mercredi..."></textarea>
+  </section>
+
+  <section id="apropos">
+    <h2>À propos du site</h2>
+    <p>Ce site fournit des recettes basées sur des recommandations fiables pour le diabète de type 2.</p>
+    <p>Les informations proviennent de ces sites :</p>
+    <ul>
+      <li><a href="https://www.passeportsante.net/fr/Nutrition/Dietes/Fiche.aspx?doc=diabete_diete" target="_blank">Passeport Santé</a></li>
+      <li><a href="https://www.glucerna.ca/fr/plans-repas" target="_blank">Glucerna - Plans de repas</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Recettes Santé - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    const days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+
+    const generateMeal = (day) => {
+      return `
+        <div class="day">
+          <h3>${day}</h3>
+          <ul>
+            <li><strong>Déjeuner :</strong> Omelette aux légumes + pain complet</li>
+            <li><strong>Collation :</strong> Yogourt nature sans sucre</li>
+            <li><strong>Dîner :</strong> Poisson grillé + quinoa + brocolis vapeur</li>
+            <li><strong>Souper :</strong> Soupe aux lentilles + salade verte</li>
+          </ul>
+        </div>
+      `;
+    };
+
+    const mealPlanDiv = document.getElementById('meal-plan');
+    mealPlanDiv.innerHTML = days.map(generateMeal).join('');
+  </script>
+</body>
+</html>
